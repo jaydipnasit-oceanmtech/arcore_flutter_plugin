@@ -1,7 +1,7 @@
-import 'app.dart';
+import 'package:arcore_flutter_plugin_example/screens/hello_world.dart';
+
 import 'package:flutter/material.dart';
-import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart'
-    show ArCoreController;
+import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart' show ArCoreController;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,5 +9,5 @@ void main() async {
   print(await ArCoreController.checkArCoreAvailability());
   print('\nAR SERVICES INSTALLED?');
   print(await ArCoreController.checkIsArCoreInstalled());
-  runApp(App());
+  runApp(HelloWorld());
 }

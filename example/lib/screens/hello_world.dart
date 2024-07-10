@@ -15,9 +15,6 @@ class _HelloWorldState extends State<HelloWorld> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Hello World'),
-        ),
         body: ArCoreView(
           onArCoreViewCreated: _onArCoreViewCreated,
         ),
@@ -36,9 +33,8 @@ class _HelloWorldState extends State<HelloWorld> {
   Future _addSphere() async {
     final ByteData textureBytes = await rootBundle.load('assets/earth.jpg');
 
-    final material = ArCoreMaterial(
-        color: Color.fromARGB(120, 66, 134, 244),
-        textureBytes: textureBytes.buffer.asUint8List());
+    final material =
+        ArCoreMaterial(color: Color.fromARGB(120, 66, 134, 244), textureBytes: textureBytes.buffer.asUint8List());
     final sphere = ArCoreSphere(
       materials: [material],
       radius: 0.1,
