@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/services.dart';
@@ -35,12 +33,10 @@ class _AugmentedFacesScreenState extends State<AugmentedFacesScreen> {
   }
 
   loadMesh() async {
-    final ByteData textureBytes =
-        await rootBundle.load('assets/fox_face_mesh_texture.png');
+    final ByteData textureBytes = await rootBundle.load('assets/fox_face_mesh_texture.png');
 
     arCoreFaceController?.loadMesh(
-        textureBytes: textureBytes.buffer.asUint8List(),
-        skin3DModelFilename: 'fox_face.sfb');
+        textureBytes: textureBytes.buffer.asUint8List(), skin3DModelFilename: 'fox_face.sfb');
   }
 
   @override
